@@ -1,0 +1,7 @@
+<p>I am the root path with a link to sign in and sign out </p>
+
+<%= link_to 'Sign in', new_session_path %>
+
+<%= link_to 'Sign out', signout_path, method: :delete,data: { confirm: 'Are you sure?' } %>
+
+<%= link_to 'New post', new_post_path %>

@@ -1,0 +1,25 @@
+<p>yes i am the great almight post index view</p>
+
+
+
+<% @posts.each do |p| %>
+<%if signed_in?%>
+ <%=p.user.name%>
+<%=p.body%> <br>
+ <% elsif !signed_in? %>
+<%=p.body%> <br>
+<% end %>
+<% end %>
+
+<br>
+
+
+
+
+<%if signed_in?%>
+<%= link_to 'New post', new_post_path %>
+<%= link_to 'Sign out', signout_path, method: :delete,data: { confirm: 'Are you sure?' } %>
+
+<% else %>
+<%= link_to 'Sign in', new_session_path %>
+<% end %>
